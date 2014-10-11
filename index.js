@@ -4,7 +4,7 @@ $(function () {
         var params = {
                 active	: 1,
                 delay	: 450,
-                auto	: 1000
+                auto	: 3000
             };
 
         wof.wheel = $(".wheel").slotMachine(params);

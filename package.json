@@ -1,5 +1,5 @@
 {
-  "name": "wheel-of-faces",
+  "name": "selfie slots",
   "version": "0.0.1",
   "description": "Entertainment app",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dgreif/wheel-of-faces.git"
+    "url": "https://github.com/dgreif/faces-of-fortune.git"
   },
   "keywords": [
     "slots",
@@ -19,9 +19,9 @@
   "author": "Dustin Greif",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dgreif/wheel-of-faces/issues"
+    "url": "https://github.com/dgreif/faces-of-fortune/issues"
   },
-  "homepage": "https://github.com/dgreif/wheel-of-faces",
+  "homepage": "https://github.com/dgreif/faces-of-fortune",
   "devDependencies": {
     "bower": "^1.3.12",
     "grunt": "^0.4.5"

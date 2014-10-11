@@ -1,8 +1,8 @@
 {
-  "name": "wheel-of-faces",
+  "name": "selfie slots",
   "main": "index.js",
   "version": "0.0.1",
-  "homepage": "https://github.com/dgreif/wheel-of-faces",
+  "homepage": "https://github.com/dgreif/faces-of-fortune",
   "authors": [
     "dgreif <dustin.greif@gmail.com>"
   ],
