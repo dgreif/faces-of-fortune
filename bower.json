@@ -1,0 +1,21 @@
+{
+  "name": "wheel-of-faces",
+  "main": "index.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/dgreif/wheel-of-faces",
+  "authors": [
+    "dgreif <dustin.greif@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-slotmachine": "~2.0.3"
+  }
+}
