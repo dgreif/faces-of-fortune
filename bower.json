@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery-slotmachine": "~2.0.3"
+    "jquery-slotmachine": "~2.0.3",
+    "bootstrap": "~3.2.0"
   }
 }
