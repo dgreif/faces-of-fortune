@@ -9,6 +9,7 @@ $(function() {
         $captureButtons = $("#capturedButtons"),
         $videoButtons = $("#videoButtons"),
         videoStarted = false,
+        lastSelfie,
         errBack = function(error) {
             videoStarted = false;
             wof.setOutput("ERROR: Failed to start camera..try again");
@@ -62,15 +63,22 @@ $(function() {
         wof.setOutput("Uploading picture...");
         var imgStr = canvas.toDataURL();
         $('img').attr('src', imgStr);
-    }
+        wof.server.upload(imgStr);
+    };
 
     wof.closeCapture = function() {
         captureOverlay.hide();
         wof.showVideo();
-    }
+    };
 
     wof.capture = function() {
         context.drawImage(video, 0, 0, 250, 250);
         wof.showCaptured();
-    }
+    };
+
+    wof.useLastSelfie = function() {
+        if(lastSelfie) {
+
+        }
+    };
 });

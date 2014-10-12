@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "jquery-slotmachine": "~2.0.3",
-    "bootstrap": "~3.2.0"
+    "bootstrap": "~3.2.0",
+    "lodash": "~2.4.1"
   }
 }
