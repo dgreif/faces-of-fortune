@@ -30,7 +30,7 @@ $(function() {
     }
 
     function cordovaCaptureFail (img64) {
-        alert('cordova capture failed');
+        // do nothing
     }
 
     wof.showVideo = function() {
