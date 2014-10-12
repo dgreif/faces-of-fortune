@@ -1,6 +1,7 @@
-body {
+body, input {
     margin: 0;
     padding: 0;
+    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
 }
 
 .wrap {
@@ -11,7 +12,7 @@ body {
 }
 
 .spinShell {
-    border: solid 1px #a8a8a8;
+    border: solid black 4px;
     width: 250px;
     height: 250px;
     text-align: center;
@@ -27,20 +28,17 @@ body {
 
 #output {
     margin: 15px 0 5px 0;
-    font-family: courier, monospace;
-}
-
-.buttons {
-
 }
 
 input[type=button] {
     margin-top: 10px;
     width: 100%;
+    font-size: 30px;
     height: 50px;
-    border: none;
+    border: solid #000000 3px;
     border-radius: 0;
-    background: silver;
+    background: #ffffff;
+    color: #4c71db;
 }
 
 #imgCapture {
@@ -53,8 +51,17 @@ input[type=button] {
     background-color: #ffffff;
 }
 
+#imgCapture .spinShell {
+    margin-bottom: 39px;
+}
+
+.appLinks {
+    margin-top: 40px;
+}
+
 video, canvas {
     height: 100%;
     width: 100%;
 }
 
+* { -webkit-tap-highlight-color: rgba(0,0,0,0); }

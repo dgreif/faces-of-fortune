@@ -21,7 +21,7 @@ $(function () {
         if(wheel.selfies.length >= wheel.max - 1 && !iHaveASelfie()) {
             setOutput("You need to Take A Selfie");
         } else {
-            setOutput("Waiting for Selfies - " + wheel.selfies.length + "/" + wheel.max);
+            setOutput("Waiting for Selfies: " + wheel.selfies.length + "/" + wheel.max);
         }
     }
 
