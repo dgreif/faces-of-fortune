@@ -2,7 +2,7 @@ module.exports = function(grunt) {
     var jsFiles = [
             '*.js',
             'bower_components/jquery/dist/jquery.min.js',
-            'bower_components/jquery.slotmachine/dist/jquery.slotmachine.min.js',
+            'bower_components/jquery-slotmachine/dist/jquery.slotmachine.min.js',
             'bower_components/lodash/dist/lodash.min.js'
         ],
         cssFiles = [
