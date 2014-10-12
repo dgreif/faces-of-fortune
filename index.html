@@ -7,6 +7,7 @@
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/jquery-slotmachine/dist/jquery.slotmachine.min.js"></script>
     <script src="bower_components/lodash/dist/lodash.min.js"></script>
+    <script src="cordova.js"></script>
     <script src="util.js"></script>
     <script src="wheel.js"></script>
     <script src="server.js"></script>
@@ -15,29 +16,32 @@
     <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no" name="viewport" />
 </head>
 <body>
-    <section class="wrap">
-        <ul id="messages">
-        </ul>
-        <div class="wheel">
-
+    <div class="wrap">
+        <h1>Selfie Slots</h1>
+        <div class="spinShell">
+            <div class="wheel"></div>
         </div>
         <div id="output">Waiting for players</div>
         <div class="waitButtons">
-            <input type="button" value="Change my selfie" onclick="wof.showCapture();"/>
+            <input type="button" value="Take A Selfie" onclick="wof.showCapture();"/>
         </div>
         <div class="readyButtons">
             <input type="button" value="Spin!" onclick="wof.wheel.spin();"/>
         </div>
-    </section>
+    </div>
     <div id="imgCapture">
         <div class="wrap">
-            <video id="video" width="250" height="250" autoplay></video>
-            <canvas id="canvas" width="250" height="250"></canvas>
+            <h1>Take A Selfie</h1>
+            <div class="spinShell">
+                <video width="250" height="250" id="video" autoplay></video>
+                <canvas width="250" height="250" id="canvas"></canvas>
+            </div>
+
             <div id="videoButtons">
-                <input type="button" value="Snap Photo" onclick="wof.capture();" />
+                <input type="button" value="Snap Selfie" onclick="wof.capture();" />
             </div>
             <div id="capturedButtons">
-                <input type="button" value="Use this photo" onclick="wof.upload();" />
+                <input type="button" value="Use this Selfie" onclick="wof.upload();" />
                 <input type="button" value="Take another" onclick="wof.showVideo();" />
             </div>
             <input type="button" value="Cancel" onclick="wof.closeCapture();" />

@@ -6,8 +6,23 @@ $(function () {
         max = wheel.max = 5,
         setOutput = wof.setOutput;
 
+    function iHaveASelfie () {
+        var myIdFound = false;
+        _.each(selfies, function(selfie) {
+            if(selfie.id == wof.userId) {
+                myIdFound = true;
+            }
+        });
+
+        return myIdFound;
+    }
+
     function showSelfieCount() {
-        setOutput("Waiting for Selfies - " + wheel.selfies.length + "/" + wheel.max);
+        if(wheel.selfies.length >= wheel.max - 1 && !iHaveASelfie()) {
+            setOutput("You need to Take A Selfie");
+        } else {
+            setOutput("Waiting for Selfies - " + wheel.selfies.length + "/" + wheel.max);
+        }
     }
 
     wheel.showSelfieCount = showSelfieCount;
@@ -16,13 +31,11 @@ $(function () {
         var winner = selfies[result.index];
 
         if(winner && winner.id == wof.userId) {
-            setOutput("You win!!!!!!!");
+            setOutput("You WIN!!!!!!!");
         } else {
             setOutput("WAH WAH...you lose...");
         }
 
-        console.log(result);
-        selfies.length = [0];
         wheel.wait();
     }
 
@@ -53,23 +66,40 @@ $(function () {
     };
 
     wheel.spin = function () {
+        setOutput("");
         $(".readyButtons").hide();
         machine.shuffle(3, spinComplete);
-        wheel.wait();
-
     };
 
-    wheel.addSelfie = function(data) {
-        selfies.unshift(data);
+    wheel.addSelfie = function(selfie) {
+        if(selfies.length >= max) {
+            return;
+        }
+
+        if(selfies.length >= max - 1 && selfie.id != wof.userId && !iHaveASelfie()) {
+            showSelfieCount();
+            return;
+        }
+
+        if(selfies.length < max) {
+            selfies.unshift(selfie);
+        }
+
+        showSelfieCount();
 
         if(selfies.length >= max) {
             wheel.readyForSpin();
-        } else {
-            showSelfieCount();
+        }
+
+        wheel.loadWheel();
+    };
+
+    wheel.selfieTaken = function() {
+        if(selfies.length >= max) {
+            selfies.length = [0];
             wheel.loadWheel();
         }
     };
 
     wheel.wait();
-    //wheel.loadWheel();
 });

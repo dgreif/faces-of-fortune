@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
     var jsFiles = [
             '*.js',
+            '!cordova.js',
             'bower_components/jquery/dist/jquery.min.js',
             'bower_components/jquery-slotmachine/dist/jquery.slotmachine.min.js',
             'bower_components/lodash/dist/lodash.min.js'
@@ -11,7 +12,8 @@ module.exports = function(grunt) {
         ],
         htmlFiles = [
             'index.html'
-        ];
+        ],
+        distFiles = jsFiles.concat(cssFiles).concat(htmlFiles);
 
     // Project configuration.
     grunt.initConfig({
@@ -35,9 +37,19 @@ module.exports = function(grunt) {
         },
         copy: {
             all: {
-                src: jsFiles.concat(cssFiles).concat(htmlFiles),
+                src: distFiles,
                 dest: 'dist/',
                 filter: 'isFile'
+            },
+            cordova: {
+                src: distFiles,
+                dest: 'cordova/www/'
+            }
+        },
+        exec: {
+            cordova: {
+                cwd: 'cordova',
+                cmd: 'cordova run android'
             }
         }
     });
@@ -47,8 +59,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-exec');
 
     // Default task(s).
+    grunt.registerTask('cordova', ['default', 'exec:cordova']);
     grunt.registerTask('default', ['jshint','copy']);
 
 };
